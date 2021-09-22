@@ -1,0 +1,14 @@
+.box, #divRed {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.box {
+  background-color: dodgerblue;
+}
+
+#divRed {
+  background-color: red;
+}
+/*# sourceMappingURL=styles.css.map */
