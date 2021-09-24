@@ -41,33 +41,49 @@
                 height: 100px;
                 background-color: #33ff44
             }
-            
-            
-            
-
         </style>
-    </head>
-    <body>
-        <button class="attack">しゅりけんアタック！</button>
-        <div class = "box">
-            <div class="fingerhole"></div>
-        </div>
-        <div class = "box">
-            <div class="fingerhole"></div>
-        </div>
-        <div class = "box">
-            <div class="fingerhole"></div>
-        </div>
-        <script>
+        <script> 
+            function attack(){
+                delay = 100;
+                divs = Array.from(document.getElementsByClassName("box"));
+                divs.forEach((d, i) =>
                 anime({
-                targets:".box",
-                marginBottom:["-10rem","6rem"],
-                translateX:"70vw",
-                translateY:300, 
-                rotate:6720, 
-                scale:0.8,
-                duration: 1000,
-                });
+                    targets: d,
+                    marginBottom:["-10rem","3rem"],
+                    translateX:"70vw",
+                    translateY:300, 
+                    rotate:6720, 
+                    scale:0.8,
+                    duration: 1000,
+                    delay: delay * i,
+                }))
+            };
+
+            function loadPage() {
+                document.getElementById("attack").addEventListener("click", attack);
+            };
+            // anime({
+            //     targets:".box",
+            //     marginBottom:["-10rem","6rem"],
+            //     translateX:"70vw",
+            //     translateY:300, 
+            //     rotate:6720, 
+            //     scale:0.8,
+            //     duration: 1000,
+            //     });
         </script>
+    </head>
+    <body onload ="loadPage()">
+        <button id="attack">しゅりけんアタック！</button>
+        <div class = "box">
+            <div class="fingerhole"></div>
+        </div>
+        <div class = "box">
+            <div class="fingerhole"></div>
+        </div>
+        <div class = "box">
+            <div class="fingerhole"></div>
+        </div>
+
     </body>
 </html>
