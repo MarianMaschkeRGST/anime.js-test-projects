@@ -47,17 +47,17 @@
                 delay = 100;
                 divs = Array.from(document.getElementsByClassName("box"));
                 divs.forEach((d, i) =>
-                anime({
-                    targets: d,
-                    marginBottom:["-10rem","3rem"],
-                    translateX:"70vw",
-                    translateY:300, 
-                    rotate:6720, 
-                    scale:0.8,
-                    duration: 1000,
-                    delay: delay * i,
-                }))
-            };
+                    anime({
+                        targets: d,
+                        marginBottom:["-10rem","3rem"],
+                        translateX:"70vw",
+                        translateY:300, 
+                        rotate:6720, 
+                        scale:0.8,
+                        duration: 1000,
+                        delay: delay * i,
+                    }))
+                };
 
             function loadPage() {
                 document.getElementById("attack").addEventListener("click", attack);
