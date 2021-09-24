@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
+        </script>
+          
+        <script>
+            function mouseListener() {
+                let w = window.innerWidth;
+                let h = window.innerHeight;
+                let x = parseInt(Math.random() * (w - 100));
+                let y = parseInt(Math.random() * (h - 100));
+                let rgb = [0, 0, 0];
+                rgb = rgb.map(c => parseInt(Math.random() * 255));
+                
+                
+                anime({targets: ".box", 
+                       translateX: x, translateY: y, 
+                       backgroundColor: `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`});
+            }
+            
+            
+            function loadPage() {
+                document.getElementsByTagName("div")[0].addEventListener("mouseenter",
+                                                                         mouseListener);
+            }
+        
+        </script>
+        
+        <style>
+            .box {
+                background-color: #0092ce;
+                width: 100px;
+                height: 100px;
+                          
+            }
+        </style>
+        
+        <title>Catch Me</title>
+    </head>
+    <body onload = "loadPage()">
+        <h1>Try to catch the box</h1>
+        <div class = "box"></div>
+    </body>
+    
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
+        </script>
+          
+        <style>
+            body{
+                display: flex;
+                flex-direction: column;
+                position: relative;
+            }
+
+            .box {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: auto auto auto auto;
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+                background-color: #000;
+                clip-path: polygon(0 0, 0 0, 24% 55%, 0 100%, 0 100%, 50% 79%, 100% 100%, 100% 100%, 75% 52%, 100% 0, 100% 0,48% 23%);
+                margin-bottom: 5rem;
+                z-index: 1;
+            }
+
+            .fingerhole {
+                position: absolute;
+                background-color: white;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                z-index: 10;
+            }
+            #absDiv {
+                position: absolute;
+                left: 250px;
+                top: 300px;
+                width: 100px;
+                height: 100px;
+                background-color: #33ff44
+            }
+            
+            
+            
+
+        </style>
+    </head>
+    <body>
+        <button class="attack">しゅりけんアタック！</button>
+        <div class = "box">
+            <div class="fingerhole"></div>
+        </div>
+        <div class = "box">
+            <div class="fingerhole"></div>
+        </div>
+        <div class = "box">
+            <div class="fingerhole"></div>
+        </div>
+        <script>
+                anime({
+                targets:".box",
+                marginBottom:["-10rem","6rem"],
+                translateX:"70vw",
+                translateY:300, 
+                rotate:6720, 
+                scale:0.8,
+                duration: 1000,
+                });
+        </script>
+    </body>
+</html>

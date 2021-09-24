@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
+        </script>
+          
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                margin: 5px;
+                background-color: #000;
+            }
+            #absDiv {
+                position: absolute;
+                left: 250px;
+                top: 300px;
+                width: 100px;
+                height: 100px;
+                background-color: #33ff44
+            }
+            
+            
+            
+
+        </style>
+    </head>
+    <body>
+        <h1>DOM Attributes</h1>
+        <input id = "txtIn" />
+        <p>
+
+            <select size = "1">
+                <option>London</option>
+                <option>Berlin</option>
+                <option>Paris</option>
+                <option>Oslo</option>
+                <option>Rome</option>
+                <option>Madrid</option>
+                
+            </select>
+        </p>
+        
+        <script>
+            // anime({targets: "input", value: [0, 100]});
+            anime({targets: "select", size: 5});
+        </script>
+    </body>
+    
+
+
+</html>
