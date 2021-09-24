@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        div {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0;
+        }
+    </style>
+    <script>
+        function loadPage(){
+            // Creating a ball grid with 15 rows and 30 columns
+            const LEFT_START = 10, TOP_START = 10, W = 40, H = 40;
+            for(let row = 0; row < 22; row++)
+                for (let col = 0; col < 33; col++){
+                    let div = document.createElement("div");
+                    let left = LEFT_START + col * W;
+                    let top = TOP_START + row * H;
+                    div.setAttribute("style", "left: " + left + "px; top: " + top + "px");
+                    document.body.appendChild(div);
+                }
+
+            divs = Array.from(document.getElementsByTagName("div"));
+            divs.forEach( d => d.onmouseenter =
+                                () => anime({targets: d, opacity: 1,
+                                             direction: 'alternate',
+                                            duration: 300}));
+            }
+
+    </script>
+</head>
+<body onload="loadPage()">
+    
+</body>
+</html>
