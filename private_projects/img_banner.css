@@ -1,0 +1,31 @@
+body {
+    background-color: white;
+}
+section {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: aquamarine;
+    width: 100%;
+    margin-top: 10vh;
+    height: clamp(510px, 51vh, 1010px);
+}
+div {  
+    position: relative; 
+    width: calc(100vh/16);
+    height: clamp(calc(500px/9), calc(50vh/9), calc(1000px/9));
+    margin: 1px;
+    background-color: black;
+    z-index: 1;
+}
+
+.image-banner:hover{
+    background-color: blueviolet;
+}
+
+.img-1{
+    background: url(./img/img-1.jpeg);
+}
