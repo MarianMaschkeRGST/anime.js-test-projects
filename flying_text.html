@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        div {
+            position: absolute;
+            height: 45px;
+            margin: 5px;
+            font-size: 50px;
+            font-family: monospace;
+            color: yellowgreen;
+        }
+
+    </style>
+    <script>
+        function loadPage(){
+            const WORD = 'Hello there, General Kenobi!';
+            const LEFT_START = 150, TOP_START = 200;
+
+            // Generate divs for each letter, so that they be animated separately
+            for(let i = 0; i < WORD.length; i++) {
+                let div = document.createElement("div");
+                let left = LEFT_START + 40 * i;
+                div.setAttribute("style", "left: " + 
+                                    left + "px; top: " + TOP_START + "px");
+                div.innerHTML = WORD.charAt(i);
+                document.body.appendChild(div);
+            }
+
+            anime({targets: 'div',
+                    top: function(el, i){
+                        let amount = parseInt(Math.random() * 100);
+                        return Math.random() > 0.5 ? - amount:
+                                                window.innerHeight + amount;
+                    },
+                    left: function(el, i){
+                        let amount = parseInt(Math.random() * 100);
+                        return Math.random() > 0.5 ? - amount:
+                                                window.innerWidth + amount;
+                    },
+                    direction: 'reverse',
+                    duration: 2000,
+                    easing: 'linear'
+                    
+                })
+        }
+    </script>
+</head>
+<body onload="loadPage()">
+</body>
+</html>
