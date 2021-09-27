@@ -29,7 +29,7 @@
     //     add({targets:"div", translateX: 400}). 
     //     add({targets:"div", translateX: '-=400'}) 
 
-    let tl = anime.timeline({direction: "alternate", easing: "linear"});
+    let tl = anime.timeline({direction: "alternate", easing: "linear", loop:true});
     let divs = document.getElementsByTagName('div');
 
     // tl.add({targets: divs[0], translateX: 150}).
@@ -37,7 +37,7 @@
     //     add({targets: divs[2], translateY: "-=100"}).
     //     add({targets: divs[3], translateY: "-=100"}).
     //     add({targets: divs[0], 
-    tl.add({targets: divs[0], backgroundColor: "#111111"}).
+    tl.add({targets: divs[0], backgroundColor: "#111111", delay: 500}).
         add({targets: divs[1], backgroundColor: "#111111"}).
         add({targets: divs[2], backgroundColor: "#111111"}).
         add({targets: divs[3], backgroundColor: "#111111"});

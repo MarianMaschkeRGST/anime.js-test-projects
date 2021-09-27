@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+        .circle {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: white;
+            z-index: 1;
+            margin-right: 50px;
+            opacity: 0;
+        }
+        
+        .logo {
+            position: absolute;
+            left: -200px;
+            color: #c0c5ce;
+            z-index: 10;
+            font-family: monospace;
+            font-size: 35px;
+        }
+    </style>
+    <script>
+        function loadPage(){
+            const CIRCLE_WIDTH = 70;
+            const START_LEFT = window.innerWidth / 2 - 1.5 * CIRCLE_WIDTH; 
+            const START_TOP = window.innerHeight / 2 - 0.5 * CIRCLE_WIDTH; 
+            // Position the circles
+            let circles = document.getElementsByClassName('circle');
+            for(let i = 0; i < 3; i++){
+                let left = START_LEFT + i * CIRCLE_WIDTH;
+                circles[i].setAttribute('style', 'left: ' +
+                                            left + 'px; top: ' + START_TOP + 'px');
+            }
+
+            // Position the logo
+            let logo = document.getElementsByClassName('logo')[0];
+            let logoTop = window.innerHeight/ 2 - 15;
+            logo.setAttribute('style', 'top: ' + logoTop + 'px');
+            
+            let left = window.innerWidth / 2 - CIRCLE_WIDTH;
+            let tl = anime.timeline();
+            tl.add({targets: '.circle', opacity: 1,
+                    delay: function(el, i) {
+                        return i * 600;
+                    }
+                }).add({targets: logo, left: left})
+                  .add({targets: circles[0], top: -200, 
+                        easing: 'easeInBack'})
+                 .add({targets: circles[1], 
+                        top: window.innerHeight + 200,
+                        easing: 'easeInBack'
+                        })
+                .add({targets: circles[2], top: -200, easing: 'easeInBack'})
+                .add({targets:'.logo', scale: 0, offset: '+=500'});
+        }
+    </script>
+</head>
+<body onload ="loadPage()">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="logo">Wasabi?</div>
+</body>
+</html>
