@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        div {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            margin: 1px;
+            background-color: greenyellow;
+            opacity: 1;
+        }
+    </style>
+    <script>
+        // Create Grid 30*30 
+        // i is rows, j is columns
+        function loadPage(){
+            const DIV_WIDTH = 40, START_LEFT = 50, START_TOP = 50;
+            for(let i = 0; i < 30; i++)
+                for(let j = 0; j < 30; j++) {
+                    let div = document.createElement('div');
+                    let left = START_LEFT + j * (DIV_WIDTH + 1);
+                    let top = START_TOP + i * (DIV_WIDTH + 1);
+                    div.setAttribute('style', 
+                                     `left: ${left}px; top: ${top}px`);
+                    div.onclick = clickListener;
+                    document.body.appendChild(div);
+                }
+            }
+
+        function clickListener(e) {
+            divs = Array.from(document.getElementsByTagName('div'));
+            let count = 0;
+            for (; count < divs.length; count++)
+                if(e.target == divs[count])
+                    break;
+            if(count < divs.length)
+                // // Fly out animation
+                // anime({targets: 'div',
+                //         translateY: {value: -600, duration: 1000},
+                //         easing: 'easeInSine',
+                //         delay: anime.stagger(500,
+                //                             {grid: [10, 10], from: count})
+                // });
+                // // fade out animation
+                anime({targets: 'div',
+                        opacity: 0,
+                        easing: 'easeInSine',
+                        delay: anime.stagger(200,
+                                            {grid: [30, 30], from: count})
+                });
+        }
+
+    </script>
+</head>
+<body onload="loadPage()">
+
+</body>
+</html>
