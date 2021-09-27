@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 13px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body onload ="loadPage()">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+<script>
+    // let tl = anime.timeline();
+    // tl.add ({targets:"div", translateX: 200}).
+    //     add({targets:"div", translateX: 400}). 
+    //     add({targets:"div", translateX: '-=400'}) 
+
+    let tl = anime.timeline({direction: "alternate", easing: "linear"});
+    let divs = document.getElementsByTagName('div');
+
+    tl.add({targets: divs[0], translateX: 150}).
+        add({targets: divs[1], translateY: "-=100"}).
+        add({targets: divs[2], translateY: "-=100"}).
+        add({targets: divs[3], translateY: "-=100"}).
+        add({targets: divs[0], 
+            translateX: "-=150", 
+            translateY: "350",
+            backgroundColor: "#888888",
+        });
+</script>
+</body>
+</html>
