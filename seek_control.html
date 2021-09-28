@@ -10,12 +10,29 @@
         body {
             background-color: black;
         }
+        
+        .seek-anim{
+            display: flex;
+            flex-direction: column;
+        }
 
         .box {
             width: 20px;
             height: 20px;
             background-color: yellowgreen;
             margin-bottom: 5px;
+        }
+
+        .controls {
+            transform: rotate(90deg);
+            width: 100%;
+            position: absolute;
+            top: 60vh;
+            left: -48vw;
+        }
+
+        .progress {
+            width: 500px;
         }
     </style>
     <script>
@@ -38,10 +55,12 @@
 </head>
 <body onload="onLoad()">
     <div class="seek-anim">
+        <div class="controls">
+            <input class="progress" type="range" min="0" max="100" value="0">
+        </div>
         <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div> 
-        <input class="progress" type="range" min="0" max="100" value="0">
     </div>
 </body>
 </html>

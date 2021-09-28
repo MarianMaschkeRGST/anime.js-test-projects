@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seek control slider</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="./cv_scroller.js"></script>
+    <link rel="stylesheet" href="./cv_scroller.css">
+</head>
+<body onload="onLoad()">
+<div class="wrapper">
+    <div class="bars">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="controls">
+        <input 
+            class="progress" 
+            type="range" 
+            min="0" 
+            max="100"
+            value="0"
+            step="1"
+            />
+    </div>
+    <div class="seek-anim">
+        <div class="content-card">
+            <h2 class="content-header">
+                経営理念
+            </h2>
+            <p class="content-text">
+                「喜びを演出する」
+                私たちは、お客様と社員の自己実現を叶える場を創造し、
+                もっとおもしろい地域社会の実現に貢献します。
+                
+                Regista（レジスタ）は愛知県名古屋市でWeb・DTP制作やイベント企画をしています。
+                社名の「Regista」は「演出家」という意味です。
+                私たちが考える演出家とは、お客様の想いを実現するために効果的なカタチをつくりサポートし続ける存在です。
+                常に過程を重視しながらお客様の期待を上回るサービスを提供することを目指します。
+            </p>
+        </div>
+        <div class="content-card">
+            <h2 class="content-header">
+                経カタチ
+            </h2>
+            <p class="content-text">
+                私たちは、「ただモノを作る」ということが苦手です。プロジェクトから関わること
+                で企業の想いを「カタチ」にし、その「カタチ」でエンドユーザーや企業を笑顔に
+                します。
+            </p>
+        </div>
+        <div class="content-card">
+            <h2 class="content-header">
+                スガタ
+            </h2>
+            <p class="content-text">
+                私たちは業界の常識に囚われず、常に変化していきます。
+                新たなチャレンジを続けながら、親身に顧客のサポートをする「スガタ」を持ち続けます。
+            </p>
+        </div>
+        <div class="content-card">
+            <h2 class="content-header">
+                ナカマ
+            </h2>
+            <p class="content-text">
+                私たちは社員やパートナー企業、顧客の夢を叶えることで、自分たちの人生も充実
+                させたいと考えています。そして、そんなナカマと暮らす「街」をもっと楽することに喜びを感じます。
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
