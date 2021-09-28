@@ -35,11 +35,20 @@ function loadPage(){
             div.setAttribute("style", `background-image: url(./img/img-${counter}.jpeg);`)
             document.getElementById("banner").appendChild(div);
         }
-    
-    let divs = Array.from(document.getElementsByTagName("div"));
-    console.log("array created")
-    divs.forEach(item => { item.onmouseenter = listener;
-                            item.onmouseleave = listener; });
-    }
+        
+        let divs = Array.from(document.getElementsByTagName("div"));
+        console.log("array created")
+        divs.forEach(item => { item.onmouseenter = listener;
+                                item.onmouseleave = listener; });
+
+                                        
+        anime({targets: ".image-banner", 
+                translateX: [0, -1000],
+                delay: anime.stagger(150, {grid:[4,6], from: 'center'}),
+                opacity: [1, 0],
+                easing: "easeInExpo", 
+                direction: "reverse", 
+            });
+        }
 
 
