@@ -1,25 +1,37 @@
+:root {
+    --gallery-height: clamp(510px, 51vh, 1090px);
+    --img-height: ;
+    --gallery-img-wno: 6;
+    --gallery-img-hno: 4;
+}
+
 body {
-    background-color: white;
+    background-color: black;
 }
 section {
     display: flex;
     position: relative;
     z-index: 1;
-    justify-content: space-evenly;
+    justify-content: center;
     align-content: space-evenly;
     flex-wrap: wrap;
-    background-color: aquamarine;
+    background-color: white;
     width: 100%;
     margin-top: 10vh;
-    height: clamp(510px, 51vh, 1010px);
+    height: var(--gallery-height);
 }
 div {  
     position: relative; 
-    width: calc(100vh/16);
-    height: clamp(calc(500px/9), calc(50vh/9), calc(1000px/9));
+    width: calc(90vw/var(--gallery-img-wno));
+    height: clamp(
+                calc(500px/var(--gallery-img-hno)), 
+                calc(55vh/var(--gallery-img-hno)), 
+                calc(1000px/var(--gallery-img-hno))
+                );
     margin: 1px;
     background-color: black;
     z-index: 1;
+    border: 0px solid white ;
 }
 
 .image-banner:hover{
