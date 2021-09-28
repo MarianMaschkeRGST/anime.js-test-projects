@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seek control slider</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .box {
+            width: 20px;
+            height: 20px;
+            background-color: yellowgreen;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        function onLoad(){
+            var animation = anime({
+                targets: '.seek-anim .box',
+                translateX: 270,
+                delay: function(el, i) { return i * 200; },
+                elasticity: 200,
+                easing: 'easeInOutSine',
+                autoplay: false
+                });
+
+                var seekProgressEl = document.querySelector('.seek-anim .progress');
+                seekProgressEl.oninput = function() {
+                animation.seek(animation.duration * (seekProgressEl.value / 100));
+                };
+        }
+    </script>
+</head>
+<body onload="onLoad()">
+    <div class="seek-anim">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div> 
+        <input class="progress" type="range" min="0" max="100" value="0">
+    </div>
+</body>
+</html>
