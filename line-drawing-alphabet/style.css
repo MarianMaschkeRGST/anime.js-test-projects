@@ -6,4 +6,5 @@ body {
     fill:none;
     stroke:#cfc33a;
     stroke-width:4;
+    /* stroke-dasharray: 6; */
   }
