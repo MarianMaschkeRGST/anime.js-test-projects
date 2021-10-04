@@ -4,7 +4,7 @@ function onLoad(){
     //svg name space
     const ns = "http://www.w3.org/2000/svg"
 
-    //Create new svg group and place in the dom for copies
+    // Create/copy a new svg group from the first svg and place in the dom for copies
     const svg = document.getElementsByTagName('svg')[0]
     const copyGroup = document.createElementNS(ns,'g')
     copyGroup.setAttribute('id','copy');
@@ -12,6 +12,9 @@ function onLoad(){
 
 
     const header = document.querySelector('header');
+    // getComputedStyle returns object containing the values of all CSS properties of an element
+    // .split(separator) -> splits string into ordered list of substrings. Split separator word being px
+    // Here: takes the first entry of px in header height #1
     const header_height = getComputedStyle(header).height.split('px')[0];
     console.log(header_height);
 
@@ -21,13 +24,15 @@ function onLoad(){
     arrow.setAttribute('data-direction', direction)
     }
 
+    // Function change is not working  when bound in onLoad function. Should be in Eventlistener.
     function changeDirection(){
-    if(window.pageYOffset > header_height){
-    changeArrow("↑")    
-    }
-    if(window.pageYOffset < header_height){
-        changeArrow("↓")
-    }
+        // Compares the header height #1 and compares to offset in scroll -> Fully dynamic scroll breakpoints
+        if(window.pageYOffset > header_height){
+            changeArrow("↑")    
+        }
+        if(window.pageYOffset < header_height){
+            changeArrow("↓")
+        }
     }
 
 
@@ -52,16 +57,18 @@ function onLoad(){
     // Function to copy leafs to a groupd tag in the dom
     let leafCopy = [];
     function leafPicker(collection){
-    const leafs = document.querySelectorAll(`[data-name="${collection}"]`)
-    for(const leaf of leafs){
-        leafCopy.push(leaf.cloneNode(true))
+        const leafs = document.querySelectorAll(`[data-name="${collection}"]`)
+        for(const leaf of leafs){
+            // .cloneNode creates a copy with all attributes, values, inline listeners
+            // Does not copy event listeneres or listeners assigned to element properties(onclick etc.)
+            leafCopy.push(leaf.cloneNode(true))
+        }
     }
-    }
 
-
-
+    // Iterate over leafPickers and create copy in leafCopy
+    // Naming is very unfortunate: There are three different variables named "leafs"
     for(const leafs of leafPickers){
-    leafPicker(leafs.collection)
+        leafPicker(leafs.collection)
     }
 
     console.log(leafCopy)
@@ -79,7 +86,9 @@ function onLoad(){
     }
 
     makeCopies()
-    
+
+    // Get all copied leafs
+    // logic: Original leafs should not move
     const leafCopies = Array.from(document.getElementById('copy').querySelectorAll('[data-name]'))
 
     let spring = {},
