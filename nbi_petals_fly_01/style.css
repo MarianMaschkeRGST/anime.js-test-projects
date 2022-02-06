@@ -1,0 +1,78 @@
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.animation-wrapper {
+    width: 500px;
+    height: 50px;
+}
+
+.animation-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#center_petal {
+    position: absolute;
+    width: 50px;
+    left: calc(50% - 25px);
+  }
+
+#right_1,
+#right_2,
+#right_3,
+#left_1,
+#left_2,
+#left_3
+ {
+    position: absolute;
+    width: 15px;
+}
+
+#right_1 {
+    top: 25%;
+    right: 38%;
+}
+
+#right_2 {
+    bottom: 25%;
+    right: 32%;
+}
+
+#right_full {
+    position: absolute;
+    width: 25px;
+    top: 24%;
+    right: 24%;
+}
+
+#right_3 {
+    top: 25%;
+    right: 18%;
+}
+#left_1 {
+    top: 25%;
+    left: 38%;
+}
+
+#left_2 {
+    bottom: 25%;
+    left: 32%;
+}
+
+#left_full {
+    position: absolute;
+    width: 25px;
+    top: 24%;
+    left: 24%;
+}
+
+#left_3 {
+    top: 25%;
+    left: 18%;
+}
